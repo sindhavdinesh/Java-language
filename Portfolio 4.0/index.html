@@ -1,0 +1,646 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dinesh | Portfolio</title>
+
+<!-- Google Font -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet"/>
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+
+body{
+  background:#020617;
+  font-family:'Poppins',sans-serif;
+  color:#fff;
+}
+
+header{
+  position:sticky;
+  top:0;
+  width:100%;
+  background:rgba(0,0,0,0.6);
+  backdrop-filter:blur(12px);
+  z-index:100;
+  border-bottom:1px solid rgba(255,255,255,.15);
+}
+
+.container{
+  width:90%;
+  max-width:1200px;
+  margin:auto;
+}
+
+.nav{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:18px 0;
+}
+
+.logo{
+  font-size:28px;
+  font-weight:800;
+  color:#22c55e;
+  text-shadow:0 0 15px rgba(34,197,94,0.9);
+}
+
+.nav-links a{
+  text-decoration:none;
+  margin-left:25px;
+  color:#bfc6d4;
+  font-size:15px;
+  transition:.3s;
+}
+
+.nav-links a:hover{
+  color:#22c55e;
+  text-shadow:0 0 10px rgba(34,197,94,1);
+}
+
+.btn-talk{
+  background:#22c55e;
+  padding:8px 20px;
+  border-radius:35px;
+  font-weight:600;
+  font-size:14px;
+  cursor:pointer;
+  color:black;
+  box-shadow:0 0 25px rgba(34,197,94,.7);
+  border:none;
+  transition:.3s;
+}
+
+.btn-talk:hover{
+  transform:translateY(-3px);
+  box-shadow:0 0 45px rgba(34,197,94,1);
+}
+
+section{
+  padding:90px 0;
+  border-bottom:1px solid rgba(255,255,255,.1);
+}
+
+h2.section-title{
+  font-size:42px;
+  font-weight:800;
+  margin-bottom:8px;
+}
+
+.section-desc{
+  color:#94a3b8;
+  font-size:15px;
+  width:60%;
+  margin-bottom:45px;
+}
+
+/* HOME */
+.hero{
+  display:flex;
+  justify-content:space-between;
+  flex-wrap:wrap;
+  align-items:center;
+  gap:40px;
+}
+
+.hero-left h1{
+  font-size:55px;
+  line-height:1.15;
+  font-weight:800;
+}
+
+.hero-left h1 span{
+  background:linear-gradient(to right,#22c55e,#38bdf8,#a855f7);
+  -webkit-background-clip:text;
+  color:transparent;
+}
+
+.hero-left p{
+  color:#95a1ac;
+  margin:15px 0 22px;
+  font-size:16px;
+  width:80%;
+}
+
+/* PROFILE CARD */
+.card{
+  width:330px;
+  background:rgba(255,255,255,0.08);
+  padding:18px;
+  border-radius:20px;
+  border:1px solid rgba(255,255,255,0.2);
+  box-shadow:0 20px 50px rgba(0,0,0,0.6);
+  text-align:center;
+  transition:4s;
+}
+
+.card:hover{
+  transform:translateY(-6px);
+  border-color:#22c55e;
+  box-shadow:0 0 40px rgba(34,197,94,0.6);
+}
+
+.card img{
+  width:130px;
+  height:130px;
+  border-radius:100%;
+  border:2px solid #22c55e;
+  object-fit:cover;
+}
+
+/* SKILLS */
+.skill-box{
+  display:flex;
+  flex-wrap:wrap;
+  gap:15px;
+}
+
+.skill{
+  padding:10px 18px;
+  border-radius:40px;
+  background:rgba(255,255,255,.08);
+  border:1px solid rgba(255,255,255,.18);
+  font-size:14px;
+  transition:.4s;
+}
+
+.skill:hover{
+  border-color:#22c55e;
+  box-shadow:0 0 25px rgba(34,197,94,.7);
+  transform:translateY(-4px);
+}
+
+/* JOURNEY */
+.journey-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:22px;
+}
+
+.journey-box{
+  width:300px;
+  height:550px;
+  overflow:hidden;
+  border-radius:12px;
+  border:1px solid rgba(255,255,255,0.2);
+  transition:.35s;
+}
+
+.journey-box img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  display:block;
+}
+
+.journey-box:hover{
+  transform:scale(1.03);
+  border-color:#22c55a;
+  box-shadow:0 0 35px rgba(34,197,94,0.6);
+}
+
+/* PROJECTS */
+.project-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:22px;
+}
+
+.project-card{
+  background:rgba(255,255,255,.08);
+  border:1px solid rgba(255,255,255,.2);
+  padding:18px;
+  border-radius:16px;
+  transition:.35s;
+}
+
+.project-card:hover{
+  transform:translateY(-6px);
+  border-color:#22c55e;
+  box-shadow:0 0 38px rgba(34,197,94,.6);
+}
+
+.project-card img{
+  width:100%;
+  height:220px;
+  border-radius:14px;
+  object-fit:cover;
+}
+
+footer{
+  text-align:center;
+  padding:25px;
+  color:#a1a1a1;
+  margin-top:40px;
+}
+.typer-text {
+  font-size: 55px;
+  font-weight: 800;
+  line-height: 1.2;
+  min-height: 75px;
+  background: linear-gradient(to right,#22c55e,#38bdf8,#a855f7);
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+/* ===== RESPONSIVE MIX ===== */
+
+/* ===== MOBILE FIX (0 – 575px) ===== */
+@media (max-width:575px){
+  .card{
+    width:100%;
+    padding:14px;
+  }
+
+  .card img{
+    width:96px;
+    height:96px;
+  }
+}
+
+/* ===== TABLET (576px – 767px) ===== */
+@media (min-width:576px) and (max-width:767px){
+  .card{
+    width:260px;
+  }
+
+  .card img{
+    width:110px;
+    height:110px;
+  }
+}
+
+/* ===== LAPTOP (768px – 1024px) ===== */
+@media (min-width:768px) and (max-width:1024px){
+  .card{
+    width:300px;
+  }
+
+  .card img{
+    width:128px;
+    height:128px;
+  }
+}
+
+/* ===== DESKTOP (1025px+) ===== */
+@media (min-width:1025px){
+  .card{
+    width:320px;
+  }
+
+  .card img{
+    width:140px;
+    height:140px;
+  }
+}
+
+
+</style>
+</head>
+<body>
+
+<header>
+  <div class="container nav">
+    <div class="logo">Dinesh.Dev</div>
+
+    <div class="nav-links">
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#journey">Journey</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+    </div>
+
+    <button class="btn-talk">Let’s Talk</button>
+  </div>
+</header>
+
+
+<!-- HOME -->
+<section id="home">
+  <div class="container hero">
+    <div class="hero-left">
+      <h1>Hello, I’m <span>Dinesh</span></h1>
+	  <h1 class="typer-text"></h1>
+      <p>I create modern websites focusing on design, animation & responsiveness.</p>
+      <button class="btn-talk">Hire Me</button>
+    </div>
+
+    <div class="card">
+      <img src="dinesh.img\dinesh.img.jpeg">
+      <h3 style="margin-top:10px;">Dinesh Sindhav</h3>
+      <small>BCA Student • Frontend Developer</small>
+    </div>
+  </div>
+</section>
+
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="container">
+    <h2 class="section-title">About Me</h2>
+    <p class="section-desc">
+      I'm a frontend developer who loves building clean, smooth and beautiful digital experiences.
+      Continuous learner, passionate about interface design & animations.
+    </p>
+  </div>
+</section>
+
+
+<!-- SKILLS -->
+<section id="skills">
+  <div class="container">
+    <h2 class="section-title">Skills</h2>
+
+    <div class="skill-box">
+      <span class="skill">HTML</span>
+      <span class="skill">CSS</span>
+      <span class="skill">JavaScript</span>
+      <span class="skill">React (Learning)</span>
+      <span class="skill">GitHub</span>
+      <span class="skill">Figma</span>
+      <span class="skill">dsa</span>
+	  <span class="skill">php</span>
+	  <span class="skill">Node js</span>
+	  <span class="skill">Mongo DB</span>
+	  <span class="skill">python</span>
+	  <span class="skill">my sql</span>
+	  <span class="skill">Bootstrap</span>
+	  <span class="skill">No sql database</span>
+	  <span class="skill">c language</span>
+	  <span class="skill">c++</span>
+	  <span class="skill">soft skill</span>
+    </div>
+  </div>
+</section>
+
+
+<!-- JOURNEY -->
+<section id="journey">
+  <div class="container">
+    <h2 class="section-title">Journey</h2>
+
+    <div class="journey-grid">
+      <div class="journey-box"><img src="Journey.jpg\jpg (1).jpeg"></div> 
+      <div class="journey-box"><img src="Journey.jpg\jpg (2).jpeg"></div> 
+      <div class="journey-box"><img src="Journey.jpg\jpg (3).jpeg"></div> 
+    </div>
+  </div>
+</section>
+
+
+<!-- PROJECTS -->
+<section id="projects">
+  <div class="container">
+    <h2 class="section-title">Projects</h2>
+
+    <div class="project-grid">
+      <div class="project-card">
+        <img src="https://img.freepik.com/free-vector/business-hand-drawn-e-commerce-landing-page_23-2149600513.jpg?semt=ais_hybrid&w=740&q=80">
+        <h3>E-commerce website</h3>
+      </div>
+      <div class="project-card">
+        <img src="https://avatars.mds.yandex.net/i?id=a69b9888b1b841b111c4b692991035d3b8746768-3905302-images-thumbs&n=13">
+        <h3>Netflix UI Design</h3>
+      </div>
+      <div class="project-card">
+        <img src="https://cdn.dribbble.com/userupload/25657893/file/original-798634a2aabfb40613b761f214935ec4.png?resize=1600x1200">
+        <h3>Portfolio Layout</h3>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="container">
+    <h2 class="section-title">Let’s build something</h2>
+    <p class="section-desc" style="margin-bottom:40px;">
+      Want a landing page, a portfolio like this, or just want to connect?  
+      Drop a message and I'll get back as soon as I can.
+    </p>
+
+    <div style="
+        display:grid;
+        grid-template-columns:1fr 1fr;
+        gap:35px;
+        align-items:start;
+    ">
+
+      <!-- LEFT INFO CARD -->
+      <div style="
+        background:rgba(255,255,255,0.08);
+        padding:25px;
+        border-radius:18px;
+        border:1px solid rgba(255,255,255,0.2);
+        box-shadow:0 15px 35px rgba(0,0,0,0.7);
+      ">
+        
+        <div style="margin-bottom:22px;">
+          <h4 style="font-size:18px;">📍 Based in</h4>
+          <p style="color:#95a1ac;margin-top:4px;">
+            Surat kamrej, India (open work home)
+          </p>
+        </div>
+
+        <div style="margin-bottom:22px;">
+          <h4 style="font-size:18px;">✉️ Email</h4>
+          <p style="color:#95a1ac;margin-top:4px;">
+            sindhavdinesh82@gmail.com
+          </p>
+        </div>
+
+        <div>
+          <h4 style="font-size:18px;">🔗 Social</h4>
+          <p style="color:#95a1ac;margin-top:4px;">
+            GitHub, LinkedIn, Instagram links here 
+          </p>
+        </div>
+
+        <p style="font-size:13px;margin-top:25px;color:#808c9b;">
+          *My portfolio Website details.
+        </p>
+      </div>
+
+
+      <!-- RIGHT FORM CARD -->
+      <form style="
+        display:flex;
+        flex-direction:column;
+        gap:15px;
+        background:rgba(255,255,255,0.07);
+        padding:25px;
+        border-radius:18px;
+        border:1px solid rgba(255,255,255,0.2);
+      ">
+
+        <div>
+          <label style="font-size:14px;color:#c7ccd3;">Name</label>
+          <input type="text" placeholder="Your name" style="
+            width:100%;
+            padding:10px;
+            border-radius:8px;
+            border:none;
+            background:#1c2431;
+            color:white;
+            outline:none;
+          " />
+        </div>
+
+        <div>
+          <label style="font-size:14px;color:#c7ccd3;">Email</label>
+          <input type="email" placeholder="your@email.com" style="
+            width:100%;
+            padding:10px;
+            border-radius:8px;
+            border:none;
+            background:#1c2431;
+            color:white;
+            outline:none;
+          " />
+        </div>
+
+        <div>
+          <label style="font-size:14px;color:#c7ccd3;">Subject</label>
+          <input type="text" placeholder="Project / collab / query" style="
+            width:100%;
+            padding:10px;
+            border-radius:8px;
+            border:none;
+            background:#1c2431;
+            color:white;
+            outline:none;
+          " />
+        </div>
+
+        <div>
+          <label style="font-size:14px;color:#c7ccd3;">Message</label>
+          <textarea placeholder="Write your message here..." style="
+            width:100%;
+            padding:10px;
+            height:120px;
+            border-radius:8px;
+            resize:none;
+            border:none;
+            background:#1c2431;
+            color:white;
+            outline:none;
+          "></textarea>
+        </div>
+
+        <button type="submit" style="
+          padding:12px;
+          border-radius:35px;
+          border:none;
+          background:#22c55e;
+          cursor:pointer;
+          font-weight:600;
+          font-size:15px;
+          color:#041b0c;
+          box-shadow:0 0 25px rgba(34,197,94,.7);
+          display:flex;
+          align-items:center;
+          justify-content:center;
+          gap:6px;
+        ">
+          Send Message 📩
+        </button>
+
+        <p style="font-size:13px;color:#808c9b;">
+          *Form is static for now — can be connected to backend or Formspree later.
+        </p>
+      </form>
+
+    </div>
+  </div>
+</section>
+
+<div style="margin-bottom:22px;">
+  <h4 style="font-size:18px;">🔗 Social Media</h4>
+
+  <div style="display:flex; gap:12px; margin-top:15px;">
+
+    <!-- GitHub -->
+    <a href="https://github.com/sindhavdinesh" target="_blank" style="
+      width:42px; height:42px;
+      background:#ffffff;
+      border-radius:50%;
+      display:flex; align-items:center; justify-content:center;
+      border:1px solid rgba(255,255,255,0.4);
+      transition:.3s;
+    ">
+      <img src="https://cdn-icons-png.flaticon.com/512/25/25231.png" style="width:22px;">
+    </a>
+
+    <!-- LinkedIn -->
+    <a href="https://www.linkedin.com/in/dinesh-sindhav-2081b8396?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank" style="
+      width:42px; height:42px;
+      background:#0077b5;
+      border-radius:50%;
+      display:flex; align-items:center; justify-content:center;
+      border:1px solid rgba(255,255,255,0.4);
+      transition:.3s;
+    ">
+      <img src="https://cdn-icons-png.flaticon.com/512/1384/1384014.png" style="width:22px;">
+    </a>
+
+    <!-- Instagram -->
+    <a href="https://www.instagram.com/mr_coder_dinesh?igsh=MXFjc2R6MDd6NWxlNQ==" target="_blank" style="
+      width:42px; height:42px;
+      background:#F58529;
+      border-radius:50%;
+      display:flex; align-items:center; justify-content:center;
+      border:1px solid rgba(255,255,255,0.4);
+      transition:.3s;
+    ">
+      <img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" style="width:22px;">
+    </a>
+
+  </div>
+</div>
+
+<script>
+const lines = [
+  "I'm Frontend developer",
+  "I'm Computer Engineer",
+  "I'm Full stack developer",
+  "I'm Coder",
+  "I'm Designer"
+];
+
+let index = 0;
+const element = document.querySelector('.typer-text');
+
+function typeLine() {
+  element.textContent = "";
+  let charIndex = 0;
+  const text = lines[index];
+  
+  const interval = setInterval(() => {
+    element.textContent += text[charIndex];
+    charIndex++;
+
+    if(charIndex === text.length){
+      clearInterval(interval);
+      setTimeout(() => {
+        index = (index + 1) % lines.length;
+        typeLine();
+      }, 1000);
+    }
+  }, 80);
+}
+
+typeLine();
+</script>
+
+
+<footer>
+  © 2025 — Portfolio 4.0 by Dinesh with ❤️
+</footer>
+
+</body>
+</html>
