@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>JavaScript Loop Project</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<h1>JavaScript Loop Project</h1>
+
+<h2>Loop Demonstration</h2>
+<button class="toggle-btn">Show Answer</button>
+<pre id="loopjs"></pre>
+
+<h2>Question 1 to 5</h2>
+<button class="toggle-btn">Show Answer</button>
+<pre id="q1to5"></pre>
+
+<h2>Question 6 (Proof)</h2>
+<button class="toggle-btn">Show Answer</button>
+<pre id="q6"></pre>
+
+<h2>Question 7 to 9</h2>
+<button class="toggle-btn">Show Answer</button>
+<pre id="q7to9"></pre>
+
+<h2>Question 10 (Pattern)</h2>
+<button class="toggle-btn">Show Answer</button>
+<pre id="q10"></pre>
+
+<h2>Question 11 (Pattern)</h2>
+<button class="toggle-btn">Show Answer</button>
+<pre id="q11"></pre>
+
+<!-- JS FILES -->
+<script src="loop.js"></script>
+<script src="q1_to_q5.js"></script>
+<script src="q6_proof.js"></script>
+<script src="q7_to_q9.js"></script>
+<script src="q10_pattern.js"></script>
+<script src="q11_pattern.js"></script>
+
+<!-- BUTTON TOGGLE SCRIPT -->
+<script>
+  const buttons = document.querySelectorAll(".toggle-btn");
+
+  buttons.forEach(btn => {
+    btn.addEventListener("click", () => {
+      const pre = btn.nextElementSibling;
+      pre.classList.toggle("show");
+      btn.innerText = pre.classList.contains("show")
+        ? "Hide Answer"
+        : "Show Answer";
+    });
+  });
+</script>
+
+</body>
+</html>
