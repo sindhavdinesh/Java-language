@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>rock paper scissors</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+</head>
+
+<body>
+
+    <header>
+        <h1>
+            <span>HELLO</span>
+            <span id="blink">|</span>
+            <span class="name"></span>
+        </h1>
+        <button onclick="change_mode()">
+            <div class="mode-toggle">
+                <i class="fa-solid fa-sun" id="modeIcon"></i>
+            </div>
+        </button>
+    </header>
+
+    <div class="getname">
+        <div>
+            <input type="text" id="get_name" placeholder="Enter Name">
+            <button onclick="getdata()">Enter</button>
+        </div>
+        <span class="message">PLEASE ENTER YOUR NAME </span>
+    </div>
+
+    <main class="main_cont">
+        <div class="g_images">
+            <div class="images">
+                <img onclick="rock() " src="images\rock.png" alt="rock">
+            </div>
+            <div class="images">
+                <img onclick="paper()" src="images\paper.png" alt="paper">
+            </div>
+            <div class="images">
+                <img onclick="scissor()" src="images\scissors.png" alt="scissors">
+            </div>
+        </div>
+
+        <div class="cont">
+            <div class="score_board">
+                <div class="score">
+                    <img src="" id="uc" alt="User Choice">
+                    <span class="u_score">0</span>
+                    <h2>USER</h2>
+                </div>
+                <div class="score">
+                    <img src="" id="cc" alt="Comp Choice">
+                    <span class="c_score">0</span>
+                    <h2>COMP</h2>
+                </div>
+            </div>
+            <div class="notice_board">
+                <span id="winner">...</span>
+            </div>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
