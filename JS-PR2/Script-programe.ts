@@ -1,7 +1,4 @@
-// JS PR-3 Repetition Logic - TypeScript
-// Console based (no DOM)
-
-export {}; // 🔥 IMPORTANT: global scope error fix
+export {}; 
 
 // 1. Multiplication Table
 let tableNum: number = 5;
@@ -34,3 +31,4 @@ while (fibCount <= 10) {
   second = next;
   fibCount++;
 }
+
