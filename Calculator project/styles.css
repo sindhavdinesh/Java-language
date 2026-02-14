@@ -1,0 +1,437 @@
+*{
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
+  font-family:Segoe UI, sans-serif;
+}
+
+body{
+  height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  background:#0b0b14;   
+}
+
+/* calculator body */
+.calculator{
+  padding:25px;
+  border-radius:30px;
+  background:#141427;
+
+  box-shadow:
+    20px 20px 50px rgba(0,0,0,0.9),
+    -10px -10px 30px rgba(255,255,255,0.05),
+    inset 2px 2px 6px rgba(255,255,255,0.05),
+    inset -2px -2px 6px rgba(0,0,0,0.8);
+
+  transition:0.6s;
+}
+
+/* display */
+#screen{
+  width:100%;
+  height:75px;
+  border:none;
+  outline:none;
+  border-radius:18px;
+  margin-bottom:18px;
+  padding:15px;
+  font-size:30px;
+  text-align:right;
+  color:#e0e0ff;
+  background:#0d0d18;
+
+  box-shadow:
+    inset 6px 6px 12px rgba(0,0,0,0.9),
+    inset -4px -4px 10px rgba(255,255,255,0.05);
+}
+
+/* grid */
+.keys{
+  display:grid;
+  grid-template-columns:repeat(4,65px);
+  gap:14px;
+  justify-content:center;
+}
+
+/* buttons base 3D */
+button{
+  width:65px;
+  height:65px;
+  border:none;
+  border-radius:18px;
+  font-size:19px;
+  color:#e5e7ff;
+  cursor:pointer;
+
+  background:#1a1a2e;
+
+  box-shadow:
+    8px 8px 16px rgba(0,0,0,0.9),
+    -4px -4px 12px rgba(255,255,255,0.05);
+
+  transition:0.35s;
+}
+
+/* press animation */
+button:active{
+  transform:scale(0.94);
+
+  box-shadow:
+    inset 6px 6px 12px rgba(0,0,0,0.9),
+    inset -4px -4px 10px rgba(255,255,255,0.05);
+}
+
+/* plus tall */
+.plus{
+  grid-row:span 2;
+  height:144px;
+}
+
+/* equal glow */
+.equal{
+  color:white;
+  box-shadow:0 0 20px rgba(124,58,237,0.8);
+}
+
+/* ===== Default (desktop) ===== */
+.calculator{
+  transform: scale(0.9);
+}
+
+/* ===== Mobile view ≤575px ===== */
+@media (max-width:575px){
+
+  body{
+    padding:10px;
+    align-items:flex-end;   
+  }
+
+  .calculator{
+    width:100%;
+    max-width:360px;
+    margin:auto;
+    transform: scale(1);    
+    border-radius:25px;
+  }
+
+  #screen{
+    height:70px;
+    font-size:28px;
+  }
+
+  .keys{
+    grid-template-columns: repeat(4, 1fr);
+    gap:12px;
+  }
+
+  button{
+    width:100%;
+    height:60px;
+    font-size:18px;
+  }
+
+  .plus{
+    height:132px;
+  }
+}
+
+/* Backspace button special style */
+button.backspace {
+  font-size: 22px;        
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+}
+
+/* mobile me aur clear */
+@media (max-width:575px){
+  button.backspace{
+    font-size: 24px;
+  }
+}
+
+/* Backspace button premium spacing */
+button.backspace{
+  padding: 0;                 
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+
+/* SVG icon size control */
+button.backspace svg{
+  width:22px;
+  height:22px;
+}
+
+/* mobile clarity */
+@media (max-width:575px){
+  button.backspace svg{
+    width:24px;
+    height:24px;
+  }
+}
+
+/* Backspace button ko proper rounded look */
+button.backspace{
+  border-radius: 16px;      
+  padding: 0;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+
+/* SVG stroke thoda bold */
+button.backspace svg{
+  width:22px;
+  height:22px;
+  stroke-width:2.5;         
+}
+
+/* ===== Big premium backspace button ===== */
+button.backspace{
+  width: 65px;
+  height: 65px;
+  border-radius: 18px;
+  padding: 12px;                 
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  background:#1a1a2e;
+
+  box-shadow:
+    8px 8px 16px rgba(0,0,0,0.9),
+    -4px -4px 12px rgba(255,255,255,0.05);
+}
+
+/* SVG icon styling */
+button.backspace svg{
+  width: 100%;
+  height: 100%;
+  stroke: #ffffff;
+  stroke-width: 2.5;             
+  fill: none;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+/* press effect same */
+button.backspace:active{
+  transform: scale(0.94);
+  box-shadow:
+    inset 6px 6px 12px rgba(0,0,0,0.9),
+    inset -4px -4px 10px rgba(255,255,255,0.05);
+}
+
+/* Remove mobile tap delay */
+button{
+  touch-action: manipulation;
+}
+
+
+/* ===== Balanced backspace button ===== */
+button.backspace{
+  width:65px;
+  height:65px;
+  border-radius:18px;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  padding:10px;          
+}
+
+/* SVG icon smaller & clean */
+button.backspace svg{
+  width:18px;           
+  height:18px;
+  stroke-width:2.4;      
+}
+
+/* Mobile me thoda bada */
+@media (max-width:575px){
+  button.backspace svg{
+    width:20px;
+    height:20px;
+  }
+}
+
+/* ===== UNIVERSAL CENTERING ===== */
+body{
+  min-height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  padding:20px;
+}
+
+/* ===== FLEXIBLE CALCULATOR SIZE ===== */
+.calculator{
+  width:100%;
+  max-width:380px;   
+}
+
+/* ===== GRID AUTO RESPONSIVE ===== */
+.keys{
+  grid-template-columns: repeat(4, 1fr);
+  gap:14px;
+}
+
+/* ===== BUTTON AUTO SCALE ===== */
+button{
+  width:100%;
+  aspect-ratio:1/1;     
+  font-size:18px;
+}
+
+/* Plus button height fix */
+.plus{
+  aspect-ratio:auto;
+  height:100%;
+}
+
+/* Equal button strong look */
+.equal{
+  font-size:20px;
+}
+
+/* ===== SMALL MOBILE (≤575px) ===== */
+@media (max-width:575px){
+
+  body{
+    padding:10px;
+    align-items:flex-end;
+  }
+
+  .calculator{
+    max-width:360px;
+    border-radius:25px;
+  }
+
+  #screen{
+    height:70px;
+    font-size:26px;
+  }
+
+  .keys{
+    gap:12px;
+  }
+
+  button{
+    font-size:17px;
+  }
+}
+
+/* ===== VERY SMALL MOBILE (≤360px) ===== */
+@media (max-width:360px){
+
+  .calculator{
+    max-width:320px;
+  }
+
+  #screen{
+    height:65px;
+    font-size:24px;
+  }
+
+  button{
+    font-size:16px;
+  }
+}
+
+/* ===== MOBILE PERFECT FIT ≤575px ===== */
+@media (max-width:575px){
+
+  body{
+    padding:0;
+    align-items:flex-end;        
+  }
+
+  .calculator{
+    width:100%;
+    max-width:100%;
+    border-radius:25px 25px 0 0; 
+    padding:18px;
+  }
+
+  #screen{
+    height:68px;
+    font-size:24px;
+    margin-bottom:14px;
+  }
+
+  .keys{
+    grid-template-columns: repeat(4, 1fr);
+    gap:10px;                    
+  }
+
+  button{
+    width:100%;
+    height:58px;               
+    border-radius:16px;
+  }
+
+  .plus{
+    height:126px;                
+  }
+
+  /* backspace icon perfect mobile size */
+  button.backspace svg{
+    width:20px;
+    height:20px;
+  }
+}
+
+/* ===== PERFECT MOBILE CENTER ≤575px ===== */
+@media (max-width:575px){
+
+  body{
+    padding:12px;
+    display:flex;
+    justify-content:center;   /* horizontal center */
+    align-items:center;       /* vertical center */
+  }
+
+  .calculator{
+    width:100%;
+    max-width:360px;          /* mobile perfect width */
+    margin:auto;
+    border-radius:24px;
+    padding:18px;
+  }
+
+  #screen{
+    height:66px;
+    font-size:24px;
+    margin-bottom:14px;
+  }
+
+  .keys{
+    grid-template-columns: repeat(4, 1fr);
+    gap:10px;
+  }
+
+  button{
+    width:100%;
+    height:58px;
+    font-size:17px;
+  }
+
+  .plus{
+    height:126px;
+  }
+
+  button.backspace svg{
+    width:20px;
+    height:20px;
+  }
+}
+
+
+
