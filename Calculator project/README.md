@@ -94,3 +94,4 @@ to support learning and open-source practice.
 This project was created as part of a **frontend learning syllabus**
 covering **HTML, CSS, Bootstrap, JavaScript, DOM, Events, and Responsive Design**.
 
+
