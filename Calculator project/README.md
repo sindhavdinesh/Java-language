@@ -11,7 +11,7 @@ This project is fully responsive and works smoothly on
 ## 🚀 Live Demo
 
 👉 Add your GitHub Pages link here:
-**https://your-username.github.io/modern-calculator/**
+**[https://your-username.github.io/modern-calculator/](https://github.com/sindhavdinesh/Java-language/tree/main/Calculator%20project)**
 
 ---
 
@@ -93,3 +93,4 @@ to support learning and open-source practice.
 
 This project was created as part of a **frontend learning syllabus**
 covering **HTML, CSS, Bootstrap, JavaScript, DOM, Events, and Responsive Design**.
+
