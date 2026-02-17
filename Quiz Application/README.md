@@ -21,13 +21,11 @@ Simple Quiz App built using **HTML, CSS, and JavaScript**.
 ---
 
 ## 🔗 Live Demo
-👉 https://USERNAME.github.io/quiz-app/
+👉 [Open Quiz Application Repository](https://quiz-app-80808a.netlify.app/)
 
 ## 📂 GitHub Repository
-👉 https://github.com/USERNAME/quiz-app
+🔗 [Open Quiz Application Repository](https://github.com/sindhavdinesh/Java-language/tree/main/Quiz%20Application)
 
-> ⚠️ NOTE:  
-> **USERNAME ki jagah apna GitHub username likhna hai.**
 
 ---
 
@@ -49,3 +47,4 @@ Simple Quiz App built using **HTML, CSS, and JavaScript**.
 
 ## 👨‍💻 Author
 **Dinesh Sindhav**
+
