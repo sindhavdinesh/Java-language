@@ -79,7 +79,7 @@ quiz-app/
 ## 👨‍💻 Author
 
 **Your Name**
-📧 [your-email@example.com](mailto:sindhavdinesh82@gmail.com)
+📧 [mailto:sindhavdinesh82@gmail.com]
 🌐 GitHub: https://github.com/sindhavdinesh
 
 ---
@@ -87,5 +87,6 @@ quiz-app/
 ⭐ If you like this project, don’t forget to **star the repository**!
 
 Mr Developer Dinesh 👨‍💻 
+
 
 
