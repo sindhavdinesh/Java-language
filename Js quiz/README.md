@@ -6,8 +6,8 @@ A modern **JavaScript Quiz Application** with timer, score calculation, sound ef
 
 ## 🚀 Live Demo
 
-🔗 **Live App:** https://quiz-application-c60c15.netlify.app/
-📂 **GitHub Repo:** https://github.com/your-username/quiz-app
+🔗 **Live App:** (https://quiz-application-c60c15.netlify.app/)
+📂 **GitHub Repo:** [https://github.com/your-username/quiz-app](https://github.com/sindhavdinesh/Java-language/tree/main/Js%20quiz)
 
 *(Replace links with your real ones)*
 
@@ -87,3 +87,4 @@ quiz-app/
 ⭐ If you like this project, don’t forget to **star the repository**!
 
 Mr Developer Dinesh 👨‍💻 
+
