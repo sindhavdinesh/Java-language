@@ -98,5 +98,77 @@ button {
   transform: translateY(-50%) scale(0.95);
 }
 
+/* ===== Tablet / Small Mobile ===== */
+@media (max-width: 599px) {
+
+  #slider {
+    width: 90vw;
+    height: 50vw;       /* maintain ratio */
+    max-height: 260px;
+  }
+
+  #left-btn,
+  #right-btn {
+    width: 40px;
+    height: 40px;
+    font-size: 18px;
+  }
+
+  #left-btn { left: -45px; }
+  #right-btn { right: -45px; }
+
+  .bg-blur {
+    filter: blur(15px); /* thoda kam blur mobile pe */
+  }
+}
+
+@media (max-width: 400px) {
+
+  #slider {
+    width: 92vw;
+    height: 55vw;
+    max-height: 220px;
+    border-radius: 10px;
+  }
+
+  #left-btn,
+  #right-btn {
+    width: 34px;
+    height: 34px;
+    font-size: 16px;
+  }
+
+  #left-btn { left: -38px; }
+  #right-btn { right: -38px; }
+
+}
+
+/* ===== MOBILE PERFECT ARROWS ===== */
+@media (max-width: 600px){
+
+  #left-btn,
+  #right-btn{
+    width: 38px;
+    height: 38px;
+    font-size: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  /* arrows ko image ke andar lao */
+  #left-btn{ left: 8px; }
+  #right-btn{ right: 8px; }
+
+  /* optional glass look */
+  #left-btn,
+  #right-btn{
+    background: rgba(0,0,0,0.55);
+    backdrop-filter: blur(6px);
+  }
+}
+
+
+
+
 
 
