@@ -62,3 +62,41 @@ button {
   background: #fff;
   color: #000;
 }
+
+#left-btn,
+#right-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 50px;
+  height: 50px;
+  font-size: 22px;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  background: rgba(0,0,0,0.6);
+  color: #fff;
+  transition: all 0.3s ease;
+}
+
+/* Position */
+#left-btn { left: -70px; }
+#right-btn { right: -70px; }
+
+/* Hover Effect */
+#left-btn:hover,
+#right-btn:hover {
+  background: #00e5ff;
+  color: #000;
+  transform: translateY(-50%) scale(1.2);
+  box-shadow: 0 0 15px #00e5ff, 0 0 30px #00e5ff66;
+}
+
+/* Click effect */
+#left-btn:active,
+#right-btn:active {
+  transform: translateY(-50%) scale(0.95);
+}
+
+
+
