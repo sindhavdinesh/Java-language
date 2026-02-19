@@ -32,3 +32,25 @@ rightBtn.addEventListener("click", () => {
 
 /* First image load */
 displayImage(index);
+
+/* ===== AUTO SLIDE ===== */
+let autoSlide = setInterval(nextSlide, 3000); // 3 sec
+
+function nextSlide() {
+  index = (index + 1) % Images.length;
+  displayImage(index);
+}
+
+/* ===== USER CLICK PE TIMER RESET ===== */
+function resetAutoSlide() {
+  clearInterval(autoSlide);
+  autoSlide = setInterval(nextSlide, 3000);
+}
+
+/* Left click reset */
+leftBtn.addEventListener("click", resetAutoSlide);
+
+/* Right click reset */
+rightBtn.addEventListener("click", resetAutoSlide);
+
+
