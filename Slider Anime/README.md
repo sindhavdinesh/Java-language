@@ -11,7 +11,7 @@ This project features automatic image sliding, manual navigation controls, and a
 👉 https://animeslider-auto.netlify.app/
 
 💻 **GitHub Repository:**
-👉 https://github.com/your-username/anime-slider
+👉 https://github.com/sindhavdinesh/Java-language/tree/main/Slider%20Anime
 
 ---
 
@@ -54,3 +54,4 @@ Frontend Developer
 ---
 
 #Developer #SoftwareEngineer
+
