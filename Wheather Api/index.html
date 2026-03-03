@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Weather Api</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;800&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div id="particles"></div>
+
+<header class="top-bar">
+  <h1>Weather api </h1>
+  <button id="brightnessToggle" class="neon-btn">☀ Brightness</button>
+</header>
+
+<main class="main-layout">
+
+  <section class="left-panel">
+      <div class="search-box">
+          <input type="text" id="cityInput" placeholder="Enter City Name...">
+          <button onclick="getWeather()" class="neon-btn ripple">Search</button>
+      </div>
+
+      <div id="loader" class="loader hidden"></div>
+      <div id="error" class="error hidden">City not found!</div>
+  </section>
+
+  <section class="weather-card hidden" id="weatherCard">
+      <div class="emoji" id="weatherEmoji">☀️</div>
+      <h2 id="cityName"></h2>
+      <div id="dateTime" class="date"></div>
+      <div class="temperature" id="temperature">--°C</div>
+      <div id="description"></div>
+
+      <div class="extra-info">
+          <div>Humidity: <span id="humidity"></span></div>
+          <div>Wind: <span id="wind"></span></div>
+      </div>
+  </section>
+
+</main>
+
+<script src="script.js"></script>
+</body>
+</html>
