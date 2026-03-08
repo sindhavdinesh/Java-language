@@ -186,3 +186,77 @@ input:focus{
     gap:10px;
   }
 }
+
+/* 300px devices */
+@media (max-width:300px){
+
+  .container{
+    width:95%;
+    padding:10px;
+  }
+
+  h1{
+    font-size:18px;
+    text-align:center;
+  }
+
+  .search-box{
+    flex-direction:column;
+    gap:8px;
+  }
+
+  .search-box input,
+  .search-box button{
+    width:100%;
+  }
+
+}
+
+
+/* 400px devices */
+@media (max-width:400px){
+
+  .container{
+    width:92%;
+  }
+
+  h1{
+    font-size:20px;
+  }
+
+  .search-box{
+    flex-direction:column;
+    gap:10px;
+  }
+
+  .search-box input,
+  .search-box button{
+    width:100%;
+  }
+
+}
+
+
+/* 500px devices */
+@media (max-width:500px){
+
+  .container{
+    width:90%;
+  }
+
+  .search-box{
+    flex-direction:column;
+  }
+
+  .search-box input,
+  .search-box button{
+    width:100%;
+  }
+
+}
+
+
+/* extra safety */
+body{
+  overflow-x:hidden;
+}
