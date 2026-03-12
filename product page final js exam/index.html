@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>INDIA MART PRO | Online Shopping</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="media.css">
+</head>
+<body>
+
+    <header class="navbar">
+        <div class="nav-container">
+            <div class="logo">INDIAN MART PRO</div>
+            
+            <div class="search-container">
+                <input type="text" id="searchInput" placeholder="Search for products, brands and more...">
+            </div>
+
+            <div class="nav-actions">
+                <select id="sortSelect" class="sort-dropdown">
+                    <option value="default">Sort: Default</option>
+                    <option value="low-high">Price: Low to High</option>
+                    <option value="high-low">Price: High to Low</option>
+                </select>
+
+                <button id="themeToggleBtn" class="btn btn-outline">Dark Mode</button>
+                <button id="openAddModalBtn" class="btn btn-primary">Add Product</button>
+                
+                <div class="cart-icon-wrapper" id="openCartBtn">
+                    <span class="cart-text">Cart</span>
+                    <span id="cartBadge" class="cart-badge">0</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>India's Trusted Shopping Destination</h1>
+            <p>Discover a wide range of premium products at the best prices.</p>
+            <button class="btn btn-light" id="shopNowBtn">Shop Now</button>
+        </div>
+    </section>
+
+    <main class="main-container">
+        <h2 class="section-title">Trending Products</h2>
+        <div id="noProductsMsg" class="no-products hidden">No products found.</div>
+        <div class="product-grid" id="productGrid">
+            </div>
+    </main>
+
+    <div class="cart-overlay" id="cartOverlay"></div>
+    <div class="cart-panel" id="cartPanel">
+        <div class="cart-header">
+            <h3>My Cart</h3>
+            <button class="close-btn" id="closeCartBtn">&times;</button>
+        </div>
+        <div class="cart-body" id="cartItemsContainer">
+            </div>
+        <div class="cart-footer">
+            <div class="cart-total-row">
+                <span>Total Amount:</span>
+                <span id="cartTotalAmount">₹0</span>
+            </div>
+            <button class="btn btn-primary btn-full" id="placeOrderBtn">Place Order</button>
+        </div>
+    </div>
+
+    <div class="modal-overlay" id="productModal">
+        <div class="modal-box">
+            <div class="modal-header">
+                <h3 id="modalTitle">Add New Product</h3>
+                <button class="close-btn" id="closeModalBtn">&times;</button>
+            </div>
+            <form id="productForm">
+                <input type="hidden" id="productId">
+                
+                <div class="form-group">
+                    <label>Image URL *</label>
+                    <input type="url" id="productImg" placeholder="https://example.com/image.jpg">
+                    <span class="error-text" id="errImg">Please enter a valid URL.</span>
+                </div>
+                
+                <div class="form-group">
+                    <label>Product Name *</label>
+                    <input type="text" id="productName" placeholder="Product Title">
+                    <span class="error-text" id="errName">Name is required.</span>
+                </div>
+                
+                <div class="form-group">
+                    <label>Description *</label>
+                    <textarea id="productDesc" rows="3" placeholder="Short description..."></textarea>
+                    <span class="error-text" id="errDesc">Description is required.</span>
+                </div>
+                
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Price (₹) *</label>
+                        <input type="number" id="productPrice" placeholder="0">
+                        <span class="error-text" id="errPrice">Price must be greater than 0.</span>
+                    </div>
+                    <div class="form-group">
+                        <label>Discount (%)</label>
+                        <input type="number" id="productDiscount" placeholder="0">
+                        <span class="error-text" id="errDiscount">Discount cannot exceed 90%.</span>
+                    </div>
+                </div>
+                
+                <button type="submit" class="btn btn-primary btn-full">Save Product</button>
+            </form>
+        </div>
+    </div>
+
+    <div id="toastContainer" class="toast-container"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>
