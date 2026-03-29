@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Age Intelligence Dashboard</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="bg-gradient"></div>
+
+    <div class="app-container">
+        <header>
+            <div class="logo">
+                <i class="fa-solid fa-infinity"></i> Age Intelligence
+            </div>
+            <button id="theme-toggle" class="icon-btn" title="Toggle Dark Mode">
+                <i class="fa-solid fa-moon"></i>
+            </button>
+        </header>
+
+        <main class="glass-panel">
+            
+            <div class="input-section">
+                <div class="input-group">
+                    <label for="user-name"><i class="fa-solid fa-user"></i> Your Name</label>
+                    <input type="text" id="user-name" placeholder="Enter your name">
+                </div>
+                <div class="input-group">
+                    <label for="dob"><i class="fa-regular fa-calendar-check"></i> Date & Time of Birth</label>
+                    <input type="datetime-local" id="dob">
+                </div>
+                <button id="generate-btn" class="primary-btn">Generate Report <i class="fa-solid fa-wand-magic-sparkles"></i></button>
+            </div>
+            
+            <div id="error-msg" class="error-text"></div>
+
+            <div id="dashboard" class="dashboard hidden">
+                
+                <div class="greeting-bar col-span-2">
+                    <h2 id="greeting-text">Hello, User!</h2>
+                    <p>Here is your real-time Age Intelligence Report.</p>
+                </div>
+
+                <div class="card col-span-2 live-age-card">
+                    <div class="card-header"><i class="fa-solid fa-stopwatch"></i> Exact Age</div>
+                    <div class="age-main" id="exact-ymd">0 Yrs • 0 Mos • 0 Days</div>
+                    <div class="age-time" id="exact-hms">00 : 00 : 00</div>
+                </div>
+
+                <div class="card countdown-card">
+                    <div class="card-header"><i class="fa-solid fa-cake-candles"></i> Next Birthday</div>
+                    <div class="data-grid">
+                        <div><span id="bd-days">0</span><small>Days</small></div>
+                        <div><span id="bd-hours">0</span><small>Hrs</small></div>
+                        <div><span id="bd-mins">0</span><small>Min</small></div>
+                        <div><span id="bd-secs">0</span><small>Sec</small></div>
+                    </div>
+                </div>
+
+                <div class="card zodiac-card">
+                    <div class="card-header"><i class="fa-solid fa-star"></i> Zodiac Sign</div>
+                    <div class="zodiac-display" id="zodiac-result">--</div>
+                </div>
+
+                <div class="card col-span-2 stats-card">
+                    <div class="card-header"><i class="fa-solid fa-chart-pie"></i> Life Statistics</div>
+                    <div class="data-grid stats-grid">
+                        <div class="stat-box"><span id="tot-months">0</span> Total Months</div>
+                        <div class="stat-box"><span id="tot-weeks">0</span> Total Weeks</div>
+                        <div class="stat-box"><span id="tot-days">0</span> Total Days</div>
+                        <div class="stat-box"><span id="tot-hours">0</span> Total Hours</div>
+                    </div>
+                </div>
+
+                <div class="card col-span-2 progress-card">
+                    <div class="card-header"><i class="fa-solid fa-battery-half"></i> Life Progress (80-Year Average)</div>
+                    <div class="progress-track">
+                        <div class="progress-fill" id="life-progress"></div>
+                    </div>
+                    <div class="progress-label"><span id="life-percent">0.0000</span>% Lived</div>
+                </div>
+
+            </div>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
