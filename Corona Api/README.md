@@ -44,8 +44,8 @@ corona-tracker/
 
 ## 🔗 Live Links
 
-* 🌐 GitHub Repository: https://github.com/your-username/corona-tracker
-* 🚀 Live Demo: https://your-username.github.io/corona-tracker/
+* 🌐 GitHub Repository: https://github.com/sindhavdinesh/Java-language/edit/main/Corona%20Api
+* 🚀 Live Demo: https://corona-api-app.netlify.app/
 
 ---
 
