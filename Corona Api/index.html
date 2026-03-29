@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pandemic Pulse | Global Health Intelligence</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;800&family=Orbitron:wght@500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <canvas id="particleCanvas"></canvas>
+
+    <nav class="glass-nav">
+        <div class="nav-container">
+            <h1 class="logo gradient-text"><i class="fa-solid fa-virus-covid"></i> Pandemic Pulse</h1>
+            <div class="nav-controls">
+                <span id="lastUpdated" class="timestamp">Live Syncing...</span>
+                <button id="refreshBtn" class="icon-btn glow-cyan" title="Force Refresh"><i class="fa-solid fa-rotate"></i></button>
+                <button id="themeToggle" class="icon-btn glow-purple" title="Toggle Theme"><i class="fa-solid fa-moon"></i></button>
+            </div>
+        </div>
+    </nav>
+
+    <div id="errorPanel" class="error-panel hidden glass-card">
+        <i class="fa-solid fa-triangle-exclamation"></i>
+        <span id="errorMsg">Connection to health database lost. Retrying...</span>
+        <button id="retryBtn" class="btn outline-btn">Retry Now</button>
+    </div>
+
+    <main class="dashboard">
+        
+        <section class="fade-in">
+            <div class="section-header">
+                <h2 class="subtitle">Global Overview</h2>
+                <select id="continentFilter" class="glass-select">
+                    <option value="all">All Continents</option>
+                    <option value="North America">North America</option>
+                    <option value="South America">South America</option>
+                    <option value="Europe">Europe</option>
+                    <option value="Asia">Asia</option>
+                    <option value="Africa">Africa</option>
+                    <option value="Australia-Oceania">Oceania</option>
+                </select>
+            </div>
+            <div class="stats-grid">
+                <div class="stat-card glass-card warning-glow">
+                    <i class="fa-solid fa-users bg-icon"></i>
+                    <h3>Total Cases</h3>
+                    <h2 class="counter" id="g-cases">0</h2>
+                </div>
+                <div class="stat-card glass-card danger-glow">
+                    <i class="fa-solid fa-skull bg-icon"></i>
+                    <h3>Total Deaths</h3>
+                    <h2 class="counter" id="g-deaths">0</h2>
+                </div>
+                <div class="stat-card glass-card success-glow">
+                    <i class="fa-solid fa-heart-pulse bg-icon"></i>
+                    <h3>Recovered</h3>
+                    <h2 class="counter" id="g-recovered">0</h2>
+                </div>
+                <div class="stat-card glass-card info-glow">
+                    <i class="fa-solid fa-bed-pulse bg-icon"></i>
+                    <h3>Active Cases</h3>
+                    <h2 class="counter" id="g-active">0</h2>
+                </div>
+            </div>
+        </section>
+
+        <div class="split-layout fade-in">
+            
+            <section class="glass-card chart-container">
+                <div class="chart-header">
+                    <h2 class="subtitle">Data Visualization</h2>
+                    <div class="chart-toggles">
+                        <button class="toggle-btn active" data-type="bar">Bar</button>
+                        <button class="toggle-btn" data-type="doughnut">Ring</button>
+                    </div>
+                </div>
+                <div class="canvas-wrapper">
+                    <canvas id="healthChart"></canvas>
+                </div>
+            </section>
+
+            <section class="glass-card country-tracker">
+                <h2 class="subtitle">Regional Tracker</h2>
+                <div class="search-wrapper neon-border">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    <input type="text" id="countrySearch" placeholder="Search country...">
+                    <button id="searchBtn" class="btn primary-btn">Track</button>
+                </div>
+                
+                <div id="countryResult" class="country-result hidden">
+                    <div class="c-header">
+                        <img id="c-flag" src="" alt="Flag" class="flag-img">
+                        <h3 id="c-name" class="gradient-text">Country</h3>
+                    </div>
+                    <div class="c-stats">
+                        <div class="c-stat-box"><span class="label">Cases</span><span id="c-cases" class="val text-warning">0</span></div>
+                        <div class="c-stat-box"><span class="label">Deaths</span><span id="c-deaths" class="val text-danger">0</span></div>
+                        <div class="c-stat-box"><span class="label">Recovered</span><span id="c-recovered" class="val text-success">0</span></div>
+                        <div class="c-stat-box"><span class="label">Active</span><span id="c-active" class="val text-info">0</span></div>
+                    </div>
+                    <div class="rates">
+                        <div class="rate-bar border-success">
+                            <span>Recovery Rate</span>
+                            <strong id="c-rec-rate">0%</strong>
+                        </div>
+                        <div class="rate-bar border-danger">
+                            <span>Mortality Rate</span>
+                            <strong id="c-mor-rate">0%</strong>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <section class="glass-card table-section fade-in">
+            <h2 class="subtitle">Top 10 Critical Regions</h2>
+            <div class="table-responsive">
+                <table class="ranking-table">
+                    <thead>
+                        <tr>
+                            <th>Rank</th>
+                            <th>Region</th>
+                            <th>Total Cases</th>
+                            <th>New Today</th>
+                            <th>Total Deaths</th>
+                        </tr>
+                    </thead>
+                    <tbody id="rankingBody">
+                        </tbody>
+                </table>
+            </div>
+        </section>
+
+    </main>
+
+    <button id="scrollTopBtn" class="icon-btn float-btn"><i class="fa-solid fa-arrow-up"></i></button>
+
+    <footer class="glass-nav footer">
+        <p>Real-Time Global Health Intelligence System</p>
+        <p class="creator">Created by Sindhav Dinesh &copy; <span id="year"></span></p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
