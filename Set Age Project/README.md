@@ -74,7 +74,7 @@ java Main
 
 ## 🚀 Just uploaded my Age Intelligence project!
 
-🔗 GitHub: https://github.com/your-username/age-intelligence
+🔗 GitHub: https://github.com/sindhavdinesh/Java-language/tree/main/Set%20Age%20Project
 🌐 Live Demo: https://set-age-inteligence-project.netlify.app/
 
 Built using HTML, CSS & Java 💻
